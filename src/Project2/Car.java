@@ -1,6 +1,6 @@
 package Project2;
 
-public class Car {
+abstract public class Car {
     /*
 3. Create a Class Car that would have the
 following fields: carPrice and color and method
@@ -27,9 +27,7 @@ discount, otherwise 10% discount
         this.color = color;
     }
 
-    double calculateSalePrice(double carPrice){
-        return carPrice;
-    }
+   abstract double calculateSalePrice(double carPrice);
 
 }
 class Sedan extends Car{
