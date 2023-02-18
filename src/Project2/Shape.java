@@ -7,16 +7,18 @@ public interface Shape {
     Square that implements functionality defined in
     the Shape Interface. Test your code.
     */
-
-    double radius=6;
-
-    double fi=3.14;
-    double side =5;
     void calculateArea();
     void  calculatePerimeter();
 
 }
 class Circle implements Shape{
+    double radius;
+
+    final double fi=3.14;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
 
     @Override
     public void calculateArea() {
@@ -29,6 +31,12 @@ class Circle implements Shape{
     }
 }
 class Square implements Shape{
+    double side ;
+
+    public Square(double side) {
+        this.side = side;
+    }
+
     @Override
     public void calculateArea() {
         System.out.println("The area of Square is "+(side*side));

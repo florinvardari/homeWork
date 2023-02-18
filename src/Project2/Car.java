@@ -27,7 +27,7 @@ discount, otherwise 10% discount
         this.color = color;
     }
 
-   abstract double calculateSalePrice(double carPrice);
+   abstract double calculateSalePrice();
 
 }
 class Sedan extends Car{
@@ -39,17 +39,17 @@ class Sedan extends Car{
     }
 
     @Override
-    double calculateSalePrice(double carPrice) {
+    double calculateSalePrice() {
         double discount10=carPrice/10;
         double discount5=discount10/2;
         if (length>20){
             double final5 = carPrice - discount5;
             System.out.println("The price of "+color+" sedan with 5% discount is "+final5+"$");
-            return  carPrice-discount5;
+            return  final5;
         }else {
             double final10 = carPrice - discount10;
             System.out.println("The price of "+color+" sedan with 10% discount is "+final10+"$");
-            return  carPrice-discount10;
+            return  final10;
         }
     }
 
@@ -63,17 +63,17 @@ class Truck extends Car{
     }
 
     @Override
-    double calculateSalePrice(double carPrice) {
+    double calculateSalePrice() {
         double discount10=carPrice/10;
         double discount20=carPrice/5;
         if (weight>2000){
             double final10 = carPrice - discount10;
             System.out.println("The price of "+color+" Truck with 10% discount is "+final10+"$");
-            return carPrice-discount10;
+            return final10;
         }else {
             double final20 = carPrice - discount20;
             System.out.println("The price of "+color+" Truck with 20% discount is "+final20+"$");
-            return carPrice-discount20;
+            return final20;
         }
     }
 }
