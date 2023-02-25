@@ -12,15 +12,17 @@ public class Task5 {
 
         ArrayList<Integer> numbers=new ArrayList<>();
         for (int i = 1; i <=500 ; i++) {
-            numbers.add(i);
+            if (i%2==0){
+                if (i%5!=0){
+                    numbers.add(i);
+                }
+            }
         }
+
         for (int i = 0; i <numbers.size() ; i++) {
-            if (numbers.get(i)%5==0){
-                numbers.remove(i);
-            }
-            for (int x:numbers) {
-                System.out.print(x+" ");
-            }
+            System.out.print(numbers.get(i)+" ");
         }
+
+        // System.out.println(numbers);
     }
 }
