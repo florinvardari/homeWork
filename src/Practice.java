@@ -1,32 +1,38 @@
 import java.util.Scanner;
+import java.util.Stack;
+import java.util.*;
+
+
 
 public class Practice {
-    public static void main(String[] args) {
-        int lines = 7;
-        int lines1 = 1;
-
-        for (int i = 7; i >= 1; i--){
-
-            for (int j = 1; j <= i; j++){
-
-                System.out.print (j + " ");
-            }
-
-            System.out.println();
-        }
-        for (int i = 2; i <= 7; i++){
-
-            for (int k = 1; k <= i; k++){
-
-                System.out.print (k + " ");
-
-
+        public static boolean isBalanced(String s) {
+            Stack<Character> stack = new Stack<Character>();
+            for (int i = 0; i < s.length(); i++) {
+                char c = s.charAt(i);
+                if (c == '(') {
+                    stack.push(c);
+                } else if (c == ')') {
+                    if (stack.isEmpty()) {
+                        return false;
+                    } else if (stack.peek() == '(') {
+                        stack.pop();
+                    } else {
+                        return false;
+                    }
                 }
-            System.out.println();
             }
+            return stack.isEmpty();
         }
-    }
 
+
+    public static void main(String[] args) {
+            ;
+        System.out.println(isBalanced(")()("));
+
+
+        }
+
+    }
 
 
 
